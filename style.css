@@ -309,7 +309,7 @@ body {
   width: 1em;
   border: none;
   border-radius: 50%;
-  pointer-events: auto;
+  pointer-events: all;
   cursor: pointer;
 }
 .range-selector .slider .slider__background-range-box,
