@@ -471,7 +471,7 @@ body{
 
       pointer-events: none;
 
-      /* This is needed for the component to function */
+      /* Removes the standard look of the range selector*/
       -webkit-appearance: none;
       -moz-appearance: none;
 
@@ -480,24 +480,41 @@ body{
 
 
 
-    input[type="range"]::-webkit-slider-thumb,
+    input[type="range"]::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      // appearance: none;
+    }
+    input[type="range"]::-moz-range-thumb{
+      -moz-appearance: none;
+    }
+
+
+
     input[type="range"]::-moz-range-thumb{
       height: 1em;
       width: 1em;
       border: none;
-      border-radius: 50%;
-      pointer-events: all;
-      // box-shadow: 0 0 6px rgba(0,0,0,0.05);
+      pointer-events: auto;
       cursor: pointer;
+
+      // background-color: white;
+      border-radius: 50%;
+      
+    }
+
+    input[type="range"]::-webkit-slider-thumb{
+      height: 1em;
+      width: 1em;
+      border: none;
+      pointer-events: auto;
+      cursor: pointer;
+
+      background-color: grey;
+      border-radius: 50%;
     }
 
 
-    // input[type="range"]::-webkit-slider-thumb{
-    //   -webkit-appearance: none;
-    // }
-    // input[type="range"]::-moz-range-thumb{
-    //   -moz-appearance: none;
-    // }
+
 
 
 

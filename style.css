@@ -298,19 +298,33 @@ body {
   left: 0;
   background: none;
   pointer-events: none;
-  /* This is needed for the component to function */
+  /* Removes the standard look of the range selector*/
   -webkit-appearance: none;
   -moz-appearance: none;
   z-index: 2;
 }
-.range-selector .slider input[type=range]::-webkit-slider-thumb,
+.range-selector .slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.range-selector .slider input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+}
 .range-selector .slider input[type=range]::-moz-range-thumb {
   height: 1em;
   width: 1em;
   border: none;
-  border-radius: 50%;
-  pointer-events: all;
+  pointer-events: auto;
   cursor: pointer;
+  border-radius: 50%;
+}
+.range-selector .slider input[type=range]::-webkit-slider-thumb {
+  height: 1em;
+  width: 1em;
+  border: none;
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: grey;
+  border-radius: 50%;
 }
 .range-selector .slider .slider__background-range-box,
 .range-selector .slider .slider__range_visualizer {
