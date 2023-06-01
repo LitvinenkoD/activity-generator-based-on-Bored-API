@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bored API</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="wrapper">
+
+  <div class="form-page form-page--animation-title-page-render | flexbox-container wrapper" data-app-page>
+    <h1 class="form-page__heading" >Welcome to the activity generator!</h1>
+    <p class = "form-page__paragraph">This app generates activities for you based on your input using <a class="form-page__link" href="https://www.boredapi.com" target="_blank">Bored API</a>.</p>
+    <h3 class="form-page__subheading">Would you like to customize your input?</h3>
+
+    <div class="button-container">
+      <button class="form-page_button" data-button-next>Enter my preferences</button>
+      <button class="form-page_button" data-button-random>I like them random!</button>
+    </div>
+  </div>
+
+  <div class="form-page | flexbox-container wrapper" data-app-page>
+    <h1 class="form-page__heading">What type of activity?</h1>
+    <p class = "form-page__paragraph">You can select multiple items</p>
+
+    <div class="category-card-container | flexbox-container ">
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Education</p>
+      </div>
+      <div class="category-card | flexbox-container" data-category-card>
+      <p>Recreation</p>
+      </div>
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Social</p>
+      </div>
+
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>DIY</p>
+      </div>
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Charity</p>
+      </div>
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Cooking</p>
+      </div>
+
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Relaxation</p>
+      </div>
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Music</p>
+      </div>
+      <div class="category-card | flexbox-container" data-category-card>
+        <p>Busywork</p>
+      </div>
+    </div>
+
+
+    <div class="button-container">
+      <button class="form-page_button" data-button-previous>Previous</button>
+      <button class="form-page_button" data-button-next>Next</button>
+    </div>
+
+  </div>
+
+  <div class="form-page | flexbox-container wrapper" data-app-page>
+    <h1 class="form-page__heading">How many people are coming?</h1>
+    <p class="form-page__paragraph">You can select multiple items</p>
+
+    <div class="people-card-container">
+      <div class="people-card | flexbox-container" data-people-card>
+        <p>1</p>
+      </div>
+      <div class="people-card | flexbox-container" data-people-card>
+        <p>2</p>
+      </div>
+      <div class="people-card | flexbox-container" data-people-card>
+        <p>3</p>
+      </div>
+      <div class="people-card | flexbox-container" data-people-card>
+        <p>3+</p>
+      </div>
+    </div>
+
+
+
+    <div class="button-container">
+      <button class="form-page_button" data-button-previous>Previous</button>
+      <button class="form-page_button" data-button-next>Next</button>
+    </div>
+  </div>
+
+  <div class="form-page | flexbox-container wrapper" data-app-page>
+    <h1 class="form-page__heading">How much are you willing to spend on it?</h1>
+    <p class = "form-page__paragraph">Choose a range</p>
+
+
+    <div class="range-selector | flexbox-container">
+      <div class="slider">
+        <input type="range" class="slider__min-selector" min="0" max="10" step="1">
+        <input type="range" class="slider__max-selector" min="0" max="10" step="1">
+        <div class="slider__background-range-box">
+          <div class="slider__range_visualizer"></div>
+        </div>
+      </div>
+      <div class="range-selector__supporting-text | flexbox-container">
+        <p class="range-selector__min-text">0</p>
+        <p class="range-selector__max-text">10</p>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="form-page_button" data-button-previous>Previous</button>
+      <button class="form-page_button" data-button-generate-custom >Generate!</button>
+    </div>
+  </div>
+
+  <div class="form-page form-page--animation-output-page-render | flexbox-container wrapper" data-app-page data-output-page>
+    <div class="api-output-section">
+
+      <h1 class="api-output-section__heading" data-output-heading>Cook something together with someone</h1>
+
+      <div class="api-output-section__paragraph sequential-appear-container | flexbox-container" data-output-paragraph>
+        <p class="sequential-appear-container__item">Cooking</p>
+        <div class="api-output-section__text-separator sequential-appear-container__item"></div>
+        <p class="sequential-appear-container__item">3+ <i class="fa-regular fa-user"></i></p>
+        <div class="api-output-section__text-separator sequential-appear-container__item"></div>
+        <p class="sequential-appear-container__item">$$$</p>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="form-page_button" data-button-generate-flexible>Generate new</button> 
+      <button class="form-page_button" data-button-start-over>Start over</button>
+    </div>
+  </div>
+
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
