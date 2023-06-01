@@ -1,4 +1,4 @@
-import * as utils from "./activity-generator-based-on-Bored-API/helper_functions.js";
+import * as utils from "./helper_functions.js";
 
 
 
