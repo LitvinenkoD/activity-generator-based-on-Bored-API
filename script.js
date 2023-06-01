@@ -1,4 +1,4 @@
-import * as utils from "activity-generator-based-on-Bored-API/helper_functions.js";
+import * as utils from "../helper_functions.js";
 
 
 
@@ -28,7 +28,7 @@ const random_generate_button = document.querySelector("[data-button-random]")
 
 
 // Creating a cost range selector from imported class
-import * as rs from "activity-generator-based-on-Bored-API/range_selector.js"
+import * as rs from "../range_selector.js"
 
 // Initializing all HTML elements that will be needed for the cost range selector
 
