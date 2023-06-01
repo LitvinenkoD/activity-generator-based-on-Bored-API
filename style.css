@@ -312,12 +312,6 @@ body {
   pointer-events: auto;
   cursor: pointer;
 }
-.range-selector .slider input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-.range-selector .slider input[type=range]::-moz-range-thumb {
-  -moz-appearance: none;
-}
 .range-selector .slider .slider__background-range-box,
 .range-selector .slider .slider__range_visualizer {
   height: 0.25em;
