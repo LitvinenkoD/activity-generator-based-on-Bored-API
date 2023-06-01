@@ -170,7 +170,8 @@ document.addEventListener("DOMContentLoaded", e => {
   }
   
   else{
-    selected_people_cards = new Array(people_cards.length).fill(false)
+    
+    let selected_people_cards = new Array(people_cards.length).fill(false)
     localStorage.setItem("selected_people_cards", JSON.stringify(selected_people_cards))
   }
 
