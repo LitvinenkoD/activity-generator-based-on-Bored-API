@@ -354,6 +354,8 @@ body{
 .api-output-section{
   position: absolute;
   top: 25%;
+  right: 50%;
+  transform: translateX(50%);
 }
 
 @media screen and (min-width: 40rem){
