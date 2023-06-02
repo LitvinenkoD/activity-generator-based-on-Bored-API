@@ -480,6 +480,7 @@ cost_range_selector.range_selector_min_tip.addEventListener("input", (e) =>{
 
     // Saving range to local storage
     localStorage.setItem("cost_range", JSON.stringify(cost_range_selector.current_range))
+    
 
   })
 
