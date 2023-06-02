@@ -63,21 +63,7 @@ $card-color: hsl(350, 90%, 88%);
 
 /* General Styling */
 
-html{
-  // min-height: 70vh;
-}
-
-
-// @media screen and (max-width: 40em) {
-
-//   html{
-//     min-height: 99.5vh;
-//   }
-  
-// }
-
 body{
-  // min-height: 99.5vh;
   background: hsl(243, 100%, 7%);
 
   color: hsl(243, 100%, 7%);
@@ -557,8 +543,8 @@ body{
 
     input[type="range"]::-webkit-slider-thumb{
       -webkit-appearance: none;
-      height: 3em;
-      width: 3em;
+      height: 2em;
+      width: 2em;
       border: none;
       pointer-events: auto;
       cursor: pointer;

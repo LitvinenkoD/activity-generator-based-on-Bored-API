@@ -344,8 +344,8 @@ body {
 }
 .range-selector .slider input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 3em;
-  width: 3em;
+  height: 2em;
+  width: 2em;
   border: none;
   pointer-events: auto;
   cursor: pointer;
