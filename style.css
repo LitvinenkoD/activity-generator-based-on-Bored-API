@@ -241,6 +241,9 @@ body {
   padding: 1em;
   border: 2px solid transparent;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .category-card:hover,
@@ -252,6 +255,13 @@ body {
   transition: 200ms;
 }
 
+@media (hover: none) {
+  .category-card:hover,
+.people-card:hover {
+    background-color: pink;
+    border: 2px solid transparent;
+  }
+}
 .people-card-container {
   max-width: 250px;
   width: 100%;
@@ -309,7 +319,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   max-width: 400px;
-  width: 100%;
+  width: 90%;
   margin-top: 3em;
   margin-bottom: 6em;
 }
@@ -330,21 +340,18 @@ body {
   -moz-appearance: none;
   z-index: 2;
 }
-.range-selector .slider input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
 .range-selector .slider input[type=range]::-moz-range-thumb {
   -moz-appearance: none;
-}
-.range-selector .slider input[type=range]::-moz-range-thumb {
   height: 1em;
   width: 1em;
   border: none;
   pointer-events: auto;
   cursor: pointer;
   border-radius: 50%;
+  background-color: #F0F0F0;
 }
 .range-selector .slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
   height: 1em;
   width: 1em;
   border: none;

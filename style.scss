@@ -351,7 +351,14 @@ body{
 
   border: 2px solid transparent;
   cursor: pointer;
+
+  // Prevents text selection
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
+
+
 
 .category-card:hover,
 .people-card:hover,
@@ -360,6 +367,16 @@ body{
   background-color: white;
   border: 2px solid pink;
   transition: 200ms;
+}
+
+
+@media (hover: none) {
+  .category-card:hover,
+  .people-card:hover{
+    background-color: pink;
+    border: 2px solid transparent;
+
+  }
 }
 
 
@@ -490,7 +507,7 @@ body{
   justify-content: space-between;
 
   max-width: 400px;
-  width: 100%;
+  width: 90%;
 
   margin-top: calc($margin-unit * 12);
   margin-bottom: calc($margin-unit * 24);
@@ -519,29 +536,25 @@ body{
 
 
 
-    input[type="range"]::-webkit-slider-thumb{
-      -webkit-appearance: none;
-      // appearance: none;
-    }
+
+
     input[type="range"]::-moz-range-thumb{
       -moz-appearance: none;
-    }
-
-
-
-    input[type="range"]::-moz-range-thumb{
       height: 1em;
       width: 1em;
       border: none;
       pointer-events: auto;
       cursor: pointer;
 
-      // background-color: white;
       border-radius: 50%;
-      
+
+      background-color: #F0F0F0;
     }
 
+
+
     input[type="range"]::-webkit-slider-thumb{
+      -webkit-appearance: none;
       height: 1em;
       width: 1em;
       border: none;
@@ -550,7 +563,9 @@ body{
 
       background-color: #F0F0F0;
       border-radius: 50%;
+
     }
+
 
 
 
