@@ -542,8 +542,8 @@ body{
 
     input[type="range"]::-moz-range-thumb{
       -moz-appearance: none;
-      height: 1.4em;
-      width: 1.4em;
+      height: 2em;
+      width: 2em;
       border: none;
       pointer-events: auto;
       cursor: pointer;
@@ -557,8 +557,8 @@ body{
 
     input[type="range"]::-webkit-slider-thumb{
       -webkit-appearance: none;
-      height: 1.4em;
-      width: 1.4em;
+      height: 2em;
+      width: 2em;
       border: none;
       pointer-events: auto;
       cursor: pointer;
