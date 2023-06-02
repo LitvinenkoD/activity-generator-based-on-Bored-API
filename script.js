@@ -52,7 +52,9 @@ const cost_range_selector_min_range_gap = 1
 //================================================
 
 document.querySelector(".range-selector").addEventListener("touchmove", e =>{
-  e.preventDefault()
+  if(e.target != cost_range_selector_min_tip && e.target != cost_range_selector_max_tip){
+    e.preventDefault()
+  }
 })
 
 //=============================================
