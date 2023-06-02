@@ -61,6 +61,10 @@ document.querySelector(".range-selector").addEventListener("touchmove", e =>{
 
 
 
+// var
+let last_page_rendered = true
+
+
 // Defining the cost range selector from the imported class
 
 const cost_range_selector = new rs.RangeSelector(
@@ -264,6 +268,8 @@ start_over_button.addEventListener("click", e => {
 // Navigating to the last page
 flexible_generate_button.addEventListener("click", () => {
 
+  // if
+
   handleNavigation(4)
 })
 
@@ -362,8 +368,7 @@ function handleNavigation(destination_page){
   }
 
 
-
-  // ====================================================================================
+  //============================================================================================================================================
   // If we're entering the last page dynamically
   if (destination_page == last_page_index){
     makeAPIRequest(JSON.parse(localStorage.getItem("last_generation_was_random")))
@@ -389,9 +394,14 @@ function handleNavigation(destination_page){
   // If we're navigating from last page to last page
   // Used for retriggering the output animation
   if (current_page == last_page_index && destination_page == last_page_index){
-    app_pages[current_page].classList.remove("form-page--status-active")
-    app_pages[current_page].offsetWidth
-    app_pages[current_page].classList.add("form-page--status-active")
+
+    if (last_page_rendered == true){
+      app_pages[current_page].classList.remove("form-page--status-active")
+      app_pages[current_page].offsetWidth
+      app_pages[current_page].classList.add("form-page--status-active")
+      last_page_rendered = false
+    }
+
   }
 
 
@@ -648,6 +658,9 @@ ouput_page.addEventListener("animationend", e => {
 
   // If we're done rendering the page
   if(e.animationName == "output-page-render"){
+
+    //=========================================
+    last_page_rendered = true
 
     
     const output_paragraph = e.target.querySelector("[data-output-paragraph]")

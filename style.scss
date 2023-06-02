@@ -311,6 +311,7 @@ body{
   background-color: hsl(260, 100%, 72%);
   color: white;
 
+  // Disables double tap zoom on ios
   touch-action: manipulation;
 }
 
