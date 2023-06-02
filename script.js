@@ -455,7 +455,7 @@ people_cards.forEach((elem, index) => elem.addEventListener("click", e =>{
 cost_range_selector.range_selector_min_tip.addEventListener("input", (e) =>{
   
   if(parseInt(e.target.value) + cost_range_selector.min_selectors_gap > cost_range_selector.current_range[1]){
-    e.target.value = parseInt(cost_range_selector.cost_range_selector_max_tip.value) - 1
+    e.target.value = parseInt(cost_range_selector.range_selector_max_tip.value) - 1
   }
   cost_range_selector.current_range[0] = parseInt(e.target.value)
 
@@ -471,7 +471,7 @@ cost_range_selector.range_selector_min_tip.addEventListener("input", (e) =>{
   // Adding input validation on the right marker
   cost_range_selector.range_selector_max_tip.addEventListener("input", (e) => {
     if(parseInt(e.target.value) - cost_range_selector.min_selectors_gap < cost_range_selector.current_range[0]){
-      e.target.value = parseInt(cost_range_selector.cost_range_selector_min_tip.value) + 1
+      e.target.value = parseInt(cost_range_selector.range_selector_min_tip.value) + 1
     }
     cost_range_selector.current_range[1] = parseInt(e.target.value)
 

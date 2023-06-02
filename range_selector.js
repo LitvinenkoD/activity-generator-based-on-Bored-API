@@ -20,7 +20,6 @@ export class RangeSelector{
   initializeSlider(){
     this.range_selector_min_tip.value = this.current_range[0]
     this.range_selector_max_tip.value = this.current_range[1]
-
   }
 
 
