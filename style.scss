@@ -64,17 +64,17 @@ $card-color: hsl(350, 90%, 88%);
 /* General Styling */
 
 html{
-  min-height: 80vh;
+  // min-height: 70vh;
 }
 
 
-@media screen and (max-width: 40em) {
+// @media screen and (max-width: 40em) {
 
-  html{
-    min-height: 99.5vh;
-  }
+//   html{
+//     min-height: 99.5vh;
+//   }
   
-}
+// }
 
 body{
   // min-height: 99.5vh;
@@ -557,11 +557,15 @@ body{
 
     input[type="range"]::-webkit-slider-thumb{
       -webkit-appearance: none;
-      height: 2em;
-      width: 2em;
+      height: 3em;
+      width: 3em;
       border: none;
       pointer-events: auto;
       cursor: pointer;
+
+      //==========================================
+      // border: 10px solid transparent;
+      // background-clip: padding-box;
 
       background-color: #F0F0F0;
       border-radius: 50%;

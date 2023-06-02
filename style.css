@@ -35,15 +35,6 @@ textarea:focus {
 
 /* SCSS Variables */
 /* General Styling */
-html {
-  min-height: 80vh;
-}
-
-@media screen and (max-width: 40em) {
-  html {
-    min-height: 99.5vh;
-  }
-}
 body {
   background: hsl(243deg, 100%, 7%);
   color: hsl(243deg, 100%, 7%);
@@ -353,8 +344,8 @@ body {
 }
 .range-selector .slider input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
   border: none;
   pointer-events: auto;
   cursor: pointer;
