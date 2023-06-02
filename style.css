@@ -53,8 +53,14 @@ body {
   border-radius: 1em;
   margin-top: 3em;
   min-height: 70vh;
+  padding-bottom: 35rem;
 }
 
+@media screen and (min-width: 40em) {
+  .form-page {
+    padding-bottom: 0;
+  }
+}
 .form-page--animation-navigation-forwards {
   animation: page-forward-animation cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 }
