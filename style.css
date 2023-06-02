@@ -35,8 +35,11 @@ textarea:focus {
 
 /* SCSS Variables */
 /* General Styling */
-body {
+html {
   min-height: 99.5vh;
+}
+
+body {
   background: hsl(243deg, 100%, 7%);
   color: hsl(243deg, 100%, 7%);
 }

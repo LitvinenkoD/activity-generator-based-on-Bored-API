@@ -63,8 +63,12 @@ $card-color: hsl(350, 90%, 88%);
 
 /* General Styling */
 
-body{
+html{
   min-height: 99.5vh;
+}
+
+body{
+  // min-height: 99.5vh;
   background: hsl(243, 100%, 7%);
 
   color: hsl(243, 100%, 7%);
