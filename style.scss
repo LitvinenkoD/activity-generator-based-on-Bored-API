@@ -91,7 +91,7 @@ body{
   margin-top: calc($margin-unit * 12);
 
 
-  min-height: 85vh;
+  min-height: 80vh;
 
 }
 
@@ -365,9 +365,13 @@ body{
 
 .api-output-section{
   position: absolute;
-  top: 25%;
+  top: 20%;
   right: 50%;
   transform: translateX(50%);
+  width: 100%;
+
+  //
+  padding-inline: 1rem;
 }
 
 @media screen and (min-width: 40rem){
