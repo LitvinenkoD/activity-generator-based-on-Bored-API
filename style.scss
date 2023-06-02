@@ -281,9 +281,14 @@ body{
 .button-container{
   position: absolute;
   bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  white-space: nowrap;
 }
 
 .form-page_button{
+
   margin-top: calc($margin-unit * 8);
 
   border: none;
