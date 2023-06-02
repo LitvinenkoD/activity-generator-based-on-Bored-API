@@ -101,7 +101,7 @@ body{
 
   border-radius: $standard-border-radius;
 
-  margin-top: calc($margin-unit * 12);
+  margin-top: calc($margin-unit * 8);
 
 
   min-height: 85vh;
@@ -112,6 +112,8 @@ body{
 @media screen and (min-width: 40em){
   .form-page{
     min-height: 70vh;
+
+    margin-top: calc($margin-unit * 12);
   }
   
 }

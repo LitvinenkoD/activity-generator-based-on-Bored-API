@@ -59,13 +59,14 @@ body {
   padding-top: 3em;
   padding-bottom: 3em;
   border-radius: 1em;
-  margin-top: 3em;
+  margin-top: 2em;
   min-height: 85vh;
 }
 
 @media screen and (min-width: 40em) {
   .form-page {
     min-height: 70vh;
+    margin-top: 3em;
   }
 }
 .form-page--animation-navigation-forwards {
