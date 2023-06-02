@@ -213,6 +213,7 @@ body {
   cursor: pointer;
   background-color: hsl(260deg, 100%, 72%);
   color: white;
+  touch-action: manipulation;
 }
 
 @media screen and (min-width: 40em) {

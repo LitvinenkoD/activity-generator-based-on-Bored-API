@@ -310,7 +310,11 @@ body{
 
   background-color: hsl(260, 100%, 72%);
   color: white;
+
+  touch-action: manipulation;
 }
+
+
 
 @media screen and (min-width: 40em){
   .form-page_button{
