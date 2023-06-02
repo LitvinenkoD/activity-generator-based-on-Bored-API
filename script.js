@@ -51,7 +51,7 @@ const cost_range_selector_min_range_gap = 1
 
 //================================================
 
-document.querySelector(".range-selector").addEventListener("touchover", e =>{
+document.querySelector(".range-selector").addEventListener("touchmove", e =>{
   e.preventDefault()
 })
 
