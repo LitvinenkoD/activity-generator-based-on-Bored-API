@@ -375,6 +375,10 @@ body{
 
 .api-output-section__paragraph{
   margin-top: calc($margin-unit * 4);
+
+  p{
+    white-space: nowrap;
+  }
 }
 
 .api-output-section__paragraph > p{

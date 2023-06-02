@@ -265,6 +265,9 @@ body {
 .api-output-section__paragraph {
   margin-top: 1em;
 }
+.api-output-section__paragraph p {
+  white-space: nowrap;
+}
 
 .api-output-section__paragraph > p {
   display: inline;
