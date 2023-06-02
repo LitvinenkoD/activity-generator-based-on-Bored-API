@@ -316,6 +316,7 @@ body {
 }
 
 .range-selector {
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   max-width: 400px;
@@ -392,6 +393,15 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+}
+
+.range-selector::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 15em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /*# sourceMappingURL=style.css.map */

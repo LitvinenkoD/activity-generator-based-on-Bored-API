@@ -49,6 +49,16 @@ const cost_range_selector_min_range_gap = 1
 
 
 
+//================================================
+
+document.querySelector(".range-selector").addEventListener("touchover", e =>{
+  e.preventDefault()
+})
+
+//=============================================
+
+
+
 // Defining the cost range selector from the imported class
 
 const cost_range_selector = new rs.RangeSelector(

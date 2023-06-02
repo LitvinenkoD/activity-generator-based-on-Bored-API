@@ -504,6 +504,7 @@ body{
 
 
 .range-selector{
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
 
@@ -614,6 +615,21 @@ body{
     justify-content: space-between;
     align-items: center;    
   }
+}
+
+
+.range-selector::after{
+  content: "";
+  position: absolute;
+
+  width: 150%;
+  height: 15em;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+
+  // background-color: green;
 }
 
 
