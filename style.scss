@@ -104,7 +104,7 @@ body{
   margin-top: calc($margin-unit * 12);
 
 
-  min-height: 80vh;
+  min-height: 85vh;
 
 }
 
@@ -360,8 +360,7 @@ body{
 
 
 
-.category-card:hover,
-.people-card:hover,
+
 .category-card--status-active,
 .people-card--status-active{
   background-color: white;
@@ -370,12 +369,12 @@ body{
 }
 
 
-@media (hover: none) {
+@media (hover: hover) and (pointer: fine) {
   .category-card:hover,
   .people-card:hover{
-    background-color: pink;
-    border: 2px solid transparent;
-
+    background-color: white;
+    border: 2px solid pink;
+    transition: 200ms;
   }
 }
 
@@ -540,8 +539,8 @@ body{
 
     input[type="range"]::-moz-range-thumb{
       -moz-appearance: none;
-      height: 1em;
-      width: 1em;
+      height: 1.4em;
+      width: 1.4em;
       border: none;
       pointer-events: auto;
       cursor: pointer;
@@ -555,14 +554,29 @@ body{
 
     input[type="range"]::-webkit-slider-thumb{
       -webkit-appearance: none;
-      height: 1em;
-      width: 1em;
+      height: 1.4em;
+      width: 1.4em;
       border: none;
       pointer-events: auto;
       cursor: pointer;
 
       background-color: #F0F0F0;
       border-radius: 50%;
+
+    }
+
+
+    @media screen and (min-width:40em){
+      input[type="range"]::-moz-range-thumb{
+        height: 1.2em;
+        width: 1.2em;
+      
+      }
+
+      input[type="range"]::-webkit-slider-thumb{
+        height: 1.2em;
+        width: 1.2em;
+      }
 
     }
 
