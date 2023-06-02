@@ -64,7 +64,16 @@ $card-color: hsl(350, 90%, 88%);
 /* General Styling */
 
 html{
-  min-height: 99.5vh;
+  min-height: 80vh;
+}
+
+
+@media screen and (max-width: 40em) {
+
+  html{
+    min-height: 99.5vh;
+  }
+  
 }
 
 body{
