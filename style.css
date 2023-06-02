@@ -256,6 +256,10 @@ body {
     top: 35%;
   }
 }
+.api-output-section__heading {
+  text-align: center;
+}
+
 .api-output-section__paragraph {
   margin-top: 1em;
 }

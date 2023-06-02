@@ -366,6 +366,10 @@ body{
 
 // heading
 
+.api-output-section__heading{
+  text-align: center;
+}
+
 
 .api-output-section__paragraph{
   margin-top: calc($margin-unit * 4);
