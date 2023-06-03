@@ -24,12 +24,19 @@ Section 2 has 2 subgroups - buttons and user input collectors.
 
 There's overall nothing crazy going on here, expect for
 the input type range selector which is overriding moz and 
-webk standard settings which is normal for custom input type
-ranges. 
+webk standard settings. I'm using a certain trick to allow
+me to have visually small pseudo elements that are really
+larger in size. You can see more in section 2.3
+
 I'm using 1 breakpoint at 40 em, which is spread between
 most of the css content categories. I include one @media
 in the end of any section that needs @media instead of 
 doing one big media query for all content.
+
+There is also another helper breakpoint at 22em. You can find
+it in General Styling and 2.1 Buttons sections. It's only 
+changing 2 lines of css, but it makes the website look right
+on small Iphone SE type devices.
 
 Enjoy reading!*/
 
@@ -168,6 +175,13 @@ body{
     top: 35%;
   }
   
+}
+
+// Helper query for small Iphone SE type devices
+@media screen and (max-width: 22em){
+  .form-page{
+    margin-top: calc($margin-unit * 2);
+  }
 }
 
 
@@ -340,6 +354,13 @@ body{
 @media screen and (min-width: 40em){
   .form-page_button{
     font-size: .9rem;
+  }
+}
+
+// Helper query for small Iphone SE type devices
+@media screen and (max-width: 22em){
+  .button-container{
+    bottom: 1%;
   }
 }
 
