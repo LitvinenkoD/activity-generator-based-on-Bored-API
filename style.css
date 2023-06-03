@@ -338,7 +338,6 @@ input[type=range]::-webkit-slider-thumb {
   width: 3.5em;
   height: 3.5em;
   background: radial-gradient(circle at calc((100% - 1.2em) / 10 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, rgba(255, 255, 255, 0) 0.6em);
-  background-clip: content-box;
 }
 
 .slider__background-range-box,
