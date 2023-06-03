@@ -504,6 +504,8 @@ input[type="range"]::-moz-range-thumb{
     transparent calc($apparent-width / 2)
   );
 
+  background-clip: padding-box;
+
 }
 
 
