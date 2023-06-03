@@ -541,7 +541,7 @@ input[type="range"]::-webkit-slider-thumb{
       )
       50%,
     #f0f0f0 calc($apparent-width / 2),
-    transparent calc($apparent-width / 2)
+    rgba(255,255,255, 0) calc($apparent-width / 2)
   );
 
   background-clip: content-box;
