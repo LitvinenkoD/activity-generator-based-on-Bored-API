@@ -24,7 +24,7 @@ export class RangeSelector{
 
 
   // Updates the colored gap between two slider tips
-  adjustRangeVisualizator(){
+  adjustRangeVisualizer(){
     const left = this.current_range[0] * 10
     const right = 100 - this.current_range[1] * 10
   

@@ -1,6 +1,103 @@
-import * as utils from "./helper_functions.js";
+/* 
+Hi there! Welcome to the JS part of the project.
+This is a pretty big file and so I will do my best
+to make it as easy to navigate as possible.
 
 
+
+First of all, a couple of words about the project itself.
+This website is, in a nutshell, a multi paged form that 
+collects user input and then returns output on the last 
+page. The idea was to make this look like an app, instead
+of like a boring form, but functionally, this is a form
+and it is easier to understand this website as a form.
+
+There are 5 pages - The welcome page, 3 middle pages
+that collect input, and the last page which is the output
+section.
+
+There is navigation between all pages using buttons. You can
+not navigate freely, instead you'd use the infrastructure I 
+provided with buttons.
+
+All pages except for the last page can visit neibhoring pages,
+page one can visit page 5 and page 5 can visit page 1.
+
+
+All user input is saved to local storage any time user enters
+or modifies anything. As soon as you'd click on a category
+card for instance, the status of all category cards is 
+saved to local storage.
+
+Local storage keeps track of:
+* Current page
+* Selected Category cards
+* Selected People cards
+* Selected Cost range
+* Last generated API response
+* Whether or not last generation was random (bool value)
+
+This allows to make the app as user friendly as possible. 
+It is very flexible with usage and it behaves as you would
+expect it to behave if it was an actual production website.
+
+I am using Bored API, there is a link to it on the title page
+of the site.
+
+
+
+Additional things to know:
+script.js is a modular file and I'm importing two other js files.
+This is done for readability and to separate important things from
+less important. script.js file is the "main".
+
+utils.js contains formatter functions that are needed to communicate
+with the API. They format user input and interpret output for the
+user.
+
+range_selector.js is a class I used to make the cost range selector.
+I decided to abstract it to a separate file to, again, save space
+and decrese noise in the main file. It contains the class definition
+and the definition of some methods that are used on the class.
+
+
+
+Structure of script.js - this file:
+
+
+1. Variable and DOM elems Definition
+2. DOM ContentLoaded event
+3. Navigation buttons' logic
+4. Page navigation manager - handleNavigation
+5. User input collectors
+
+6. Url generator (for the API)
+7. API request sender and output collector
+8. Function that pastes API output into the DOM
+9. API output animator
+
+
+You can go to the respective code group
+by using CTRL F
+
+
+
+
+All logical group title comments start
+and end with ===,
+all local comments are just comments.
+
+Happy reading!
+
+*/
+
+
+import * as utils from "./utils.js";
+
+
+
+
+// === Variable and DOM elems Definition ===
 
 
 // Initializing needed DOM element variables
@@ -33,36 +130,28 @@ import * as rs from "./range_selector.js"
 // Initializing all HTML elements that will be needed for the cost range selector
 
 // Min and max mean the left and the right selector of a given slider
-const cost_range_selector_min_tip = document.querySelector(".slider__min-selector")
-const cost_range_selector_max_tip = document.querySelector(".slider__max-selector")
+const cost_range_selector_min_tip = document.querySelector("[data-slider-min-selector]")
+const cost_range_selector_max_tip = document.querySelector("[data-slider-max-selector]")
 
 // Selected range visualizer
-const range_visualizer = document.querySelector(".slider__range_visualizer")
+const range_visualizer = document.querySelector("[data-slider-range-visualizer]")
 
 // Text underneath the range selector
-const range_selector_min_text_visualizer = document.querySelector(".range-selector__min-text")
-const range_selector_max_text_visualizer = document.querySelector(".range-selector__max-text")
+const range_selector_min_text_visualizer = document.querySelector("[data-range-selector-min-text]")
+const range_selector_max_text_visualizer = document.querySelector("[data-range-selector-max-text]")
 
 // Initializing values for the range_selector
 const cost_range_selector_default_range = [0, 10]
 const cost_range_selector_min_range_gap = 1
 
 
-
-//================================================
+// Making an area around the range selector not scrollable on mobile devices
 
 document.querySelector(".range-selector").addEventListener("touchmove", e =>{
   if(e.target != cost_range_selector_min_tip && e.target != cost_range_selector_max_tip){
     e.preventDefault()
   }
 })
-
-//=============================================
-
-
-
-// var
-let last_page_rendered = true
 
 
 // Defining the cost range selector from the imported class
@@ -79,7 +168,7 @@ const cost_range_selector = new rs.RangeSelector(
 
 // Cost range selector initialization
 cost_range_selector.initializeSlider()
-cost_range_selector.adjustRangeVisualizator()
+cost_range_selector.adjustRangeVisualizer()
 
 
 
@@ -87,20 +176,20 @@ cost_range_selector.adjustRangeVisualizator()
 
 
 
-// These are some global variables I'm using.
-// They don't have to be global, but it feels easier
-// managing the program with them. They always store
-// the
+// Global variables
 
-// let selected_category_cards
-// let selected_people_cards
-// cost range is contained inside range_selector class instance
+// A variable needed to prevent a last page rendering bug
+let last_page_rendered = true
 
 
 
 
 
 
+
+
+
+// === DOM ContentLoaded event - retreiving local storage info ===
 
 
 
@@ -119,7 +208,10 @@ document.addEventListener("DOMContentLoaded", e => {
     // 5% use case, but it is an important detail
     // for me.
     if(parseInt(localStorage.getItem("current_page")) == 4){
-      loadLastActivityGenerated()
+      
+      // Load the last activity that was generated to the DOM (From local storage)
+      app_pages[parseInt(localStorage.getItem("current_page"))].classList.add("form-page--status-active")
+      pasteAPIDataToDOM(localStorage.getItem("last_API_output").split("/"))
     }
 
 
@@ -140,10 +232,6 @@ document.addEventListener("DOMContentLoaded", e => {
   }
 
   
-
-
-
-
 
 
   if (localStorage.getItem("selected_category_cards") != null){
@@ -196,7 +284,7 @@ document.addEventListener("DOMContentLoaded", e => {
     cost_range_selector.current_range = JSON.parse(localStorage.getItem("cost_range"))
 
     cost_range_selector.initializeSlider()
-    cost_range_selector.adjustRangeVisualizator()
+    cost_range_selector.adjustRangeVisualizer()
     cost_range_selector.updateRangeText()
   }
 
@@ -216,23 +304,12 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-function loadLastActivityGenerated(){
-  app_pages[parseInt(localStorage.getItem("current_page"))].classList.add("form-page--status-active")
-  pasteAPIDataToDOM(localStorage.getItem("last_API_output").split("/"))
-}
+// === Navigation buttons' logic === 
+
+// All of these buttons essentially call Handle Navigation function
+// That comes right after these event listeners.
 
 
-
-
-
-
-
-
-
-
-
-
-// Page navigation
 
 // Navigating one step forwards
 next_buttons.forEach(elem => elem.addEventListener("click", e => {
@@ -248,7 +325,6 @@ previous_buttons.forEach(elem => elem.addEventListener("click", e => {
   handleNavigation(parseInt(localStorage.getItem("current_page")) - 1)
 
 }))
-
 
 
 
@@ -311,7 +387,8 @@ custom_generate_button.addEventListener("click", () => {
 
 
 
-// Handling navigation
+// === Page navigation manager ===
+
 
 function handleNavigation(destination_page){
 
@@ -368,8 +445,8 @@ function handleNavigation(destination_page){
   }
 
 
-  //============================================================================================================================================
-  // If we're entering the last page dynamically
+  
+  // If we're entering the last page
   if (destination_page == last_page_index){
     makeAPIRequest(JSON.parse(localStorage.getItem("last_generation_was_random")))
   }
@@ -427,10 +504,7 @@ function handleNavigation(destination_page){
 
 
 
-
-
-
-// Collecting user input
+// === User input collectors ===
 
 
 // Categories
@@ -481,7 +555,7 @@ cost_range_selector.range_selector_min_tip.addEventListener("input", (e) =>{
   }
   cost_range_selector.current_range[0] = parseInt(e.target.value)
 
-  cost_range_selector.adjustRangeVisualizator()
+  cost_range_selector.adjustRangeVisualizer()
   cost_range_selector.updateRangeText()
 
   // Saving range to local storage
@@ -497,7 +571,7 @@ cost_range_selector.range_selector_min_tip.addEventListener("input", (e) =>{
     }
     cost_range_selector.current_range[1] = parseInt(e.target.value)
 
-    cost_range_selector.adjustRangeVisualizator()
+    cost_range_selector.adjustRangeVisualizer()
     cost_range_selector.updateRangeText()
 
     // Saving range to local storage
@@ -520,7 +594,9 @@ cost_range_selector.range_selector_min_tip.addEventListener("input", (e) =>{
 
 
 
-// Url generation functions
+// === URL generator for the API request ===
+// (Using some of the utils.js functions)
+
 
 // Master function
 function generateUrl(){
@@ -549,7 +625,14 @@ function generateUrl(){
 
 
 
-// Generating and then sending an API request to API handler
+// If the request was random, then call rand url generator,
+// (initializeUrl), if it was not random - generate a url
+// using the generateUrl function.
+
+// Initialize url gives random because by default if you
+// Don't provide any input, you get a random response. That's
+// Why initializer functions like a random url generator.
+
 
 function makeAPIRequest(random){
   random
@@ -561,7 +644,15 @@ function makeAPIRequest(random){
 
 
 
-// Handling API requests
+
+
+
+
+
+
+
+
+// === API request sender and output collector ===
 
 async function loadData(url){
   const response = await fetch(url);
@@ -595,6 +686,7 @@ async function fetchData(url){
 
 
 
+// === Function that pastes API output into the DOM (On last page) ===
 
 function pasteAPIDataToDOM(formatted_data){
 
@@ -649,6 +741,11 @@ function pasteAPIDataToDOM(formatted_data){
 
 
 
+
+
+// === API output animator ===
+
+
 // Animating API output
 
 const ouput_page = document.querySelector("[data-output-page]")
@@ -659,7 +756,6 @@ ouput_page.addEventListener("animationend", e => {
   // If we're done rendering the page
   if(e.animationName == "output-page-render"){
 
-    //=========================================
     last_page_rendered = true
 
     

@@ -104,15 +104,17 @@
 
     <div class="range-selector | flexbox-container">
       <div class="slider">
-        <input type="range" class="slider__min-selector" min="0" max="10" step="1">
-        <input type="range" class="slider__max-selector" min="0" max="10" step="1">
+        <input type="range" class="slider__min-selector" data-slider-min-selector min="0" max="10" step="1">
+        <input type="range" class="slider__max-selector" data-slider-max-selector min="0" max="10" step="1">
+
         <div class="slider__background-range-box">
-          <div class="slider__range_visualizer"></div>
+          <div class="slider__range_visualizer" data-slider-range-visualizer></div>
         </div>
       </div>
+
       <div class="range-selector__supporting-text | flexbox-container">
-        <p class="range-selector__min-text">0</p>
-        <p class="range-selector__max-text">10</p>
+        <p class="range-selector__min-text" data-range-selector-min-text>0</p>
+        <p class="range-selector__max-text" data-range-selector-max-text>10</p>
       </div>
     </div>
 
