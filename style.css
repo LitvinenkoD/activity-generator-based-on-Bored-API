@@ -284,6 +284,14 @@ body {
   width: 100%;
 }
 
+.slider__min-selector {
+  --this-tip-value: 0;
+}
+
+.slider__max-selector {
+  --this-tip-value: 10;
+}
+
 input[type=range] {
   position: absolute;
   top: 0;
@@ -303,10 +311,16 @@ input[type=range]::-moz-range-thumb {
   border: none;
   background-color: #F0F0F0;
   cursor: pointer;
-  height: 2em;
-  width: 2em;
   border-radius: 50%;
   pointer-events: auto;
+  /* The real width of the tip is 3.5 em,
+  but the apperent width is only 1.2em. This
+  is made for style, and the functional area
+  is kept larger for better UX */
+  width: 3.5em;
+  height: 3.5em;
+  background: radial-gradient(circle at calc((100% - 1.2em) / 10 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, transparent 0.6em);
+  outline: 1px solid black;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -318,6 +332,14 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   background-color: #F0F0F0;
   border-radius: 50%;
+  /* The real width of the tip is 3.5 em,
+  but the apperent width is only 1.2em. This
+  is made for style, and the functional area
+  is kept larger for better UX */
+  width: 3.5em;
+  height: 3.5em;
+  background: radial-gradient(circle at calc((100% - 1.2em) / 10 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, transparent 0.6em);
+  outline: 1px solid black;
 }
 
 .slider__background-range-box,

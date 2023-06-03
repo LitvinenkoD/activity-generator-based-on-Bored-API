@@ -437,6 +437,18 @@ body{
   position: relative;
   width: 100%;
 }
+
+// Needed for js. Keeps track
+// of what is the value
+// of a said range selector
+.slider__min-selector{
+  --this-tip-value: 0;
+}
+
+.slider__max-selector{
+  --this-tip-value: 10;
+}
+
   
 input[type="range"]{
   position: absolute;
@@ -456,6 +468,7 @@ input[type="range"]{
 }
 
 
+
 input[type="range"]::-moz-range-thumb{
   -moz-appearance: none;
   border: none;
@@ -463,11 +476,36 @@ input[type="range"]::-moz-range-thumb{
   background-color: #F0F0F0;
   cursor: pointer;
 
-  height: 2em;
-  width: 2em;
+
   border-radius: 50%;
   
   pointer-events: auto;
+
+
+  /* The real width of the tip is 3.5 em,
+  but the apperent width is only 1.2em. This
+  is made for style, and the functional area
+  is kept larger for better UX */
+  
+  $functional-width: 3.5em;
+  $apparent-width: 1.2em;
+
+  width: $functional-width;
+  height: $functional-width;
+
+  background: radial-gradient(
+    circle at
+      calc(
+        (100% - $apparent-width) / 10 * var(--this-tip-value) +
+        $apparent-width / 2
+      )
+      50%,
+    #f0f0f0 calc($apparent-width / 2),
+    transparent calc($apparent-width / 2)
+  );
+
+  outline: 1px solid black;
+
 }
 
 
@@ -483,6 +521,30 @@ input[type="range"]::-webkit-slider-thumb{
   background-color: #F0F0F0;
   border-radius: 50%;
 
+
+  /* The real width of the tip is 3.5 em,
+  but the apperent width is only 1.2em. This
+  is made for style, and the functional area
+  is kept larger for better UX */
+
+  $functional-width: 3.5em;
+  $apparent-width: 1.2em;
+
+  width: $functional-width;
+  height: $functional-width;
+
+  background: radial-gradient(
+    circle at
+      calc(
+        (100% - $apparent-width) / 10 * var(--this-tip-value) +
+        $apparent-width / 2
+      )
+      50%,
+    #f0f0f0 calc($apparent-width / 2),
+    transparent calc($apparent-width / 2)
+  );
+
+  outline: 1px solid black;
 }
 
 

@@ -22,12 +22,17 @@ export class RangeSelector{
     this.range_selector_max_tip.value = this.current_range[1]
   }
 
-
   // Updates the colored gap between two slider tips
   adjustRangeVisualizer(){
     const left = this.current_range[0] * 10
     const right = 100 - this.current_range[1] * 10
+
+
+    // Gradually shifts the tip aside to keep the look consistent
+    this.range_selector_min_tip.style.setProperty('--this-tip-value', this.current_range[0])
+    this.range_selector_max_tip.style.setProperty('--this-tip-value', this.current_range[1])
   
+    // Updates the color gap between the tips
     this.range_visualizer.style.left = left + "%"
     this.range_visualizer.style.right = right + "%"
   }

@@ -344,8 +344,6 @@ start_over_button.addEventListener("click", e => {
 // Navigating to the last page
 flexible_generate_button.addEventListener("click", () => {
 
-  // if
-
   handleNavigation(4)
 })
 
@@ -395,6 +393,7 @@ function handleNavigation(destination_page){
 
   let current_page = parseInt(localStorage.getItem("current_page"))
 
+  // Not really used, but kept for easier comprehension
   const first_page_index = 0
   const middle_pages_indexes = [1, 2, 3]
   const last_page_index = 4
