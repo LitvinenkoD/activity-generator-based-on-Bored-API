@@ -319,7 +319,6 @@ input[type=range]::-moz-range-thumb {
   width: 3.5em;
   height: 3.5em;
   background: radial-gradient(circle at calc((100% - 1.2em) / 9.8 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, rgba(255, 255, 255, 0) 0.6em);
-  box-shadow: none;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -329,7 +328,6 @@ input[type=range]::-webkit-slider-thumb {
   border: none;
   pointer-events: auto;
   cursor: pointer;
-  box-shadow: none;
   border-radius: 50%;
   /* The real width of the tip is 3.5 em,
   but the apperent width is only 1.2em. This
@@ -337,7 +335,9 @@ input[type=range]::-webkit-slider-thumb {
   is kept larger for better UX */
   width: 3.5em;
   height: 3.5em;
-  background: radial-gradient(circle at calc((100% - 1.2em) / 10 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, rgba(255, 255, 255, 0) 0.6em);
+  background: radial-gradient(circle at calc((100% - 1.2em) / 10 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, transparent 0.6em);
+  border: 1px solid transparent;
+  box-shadow: 0px;
 }
 
 .slider__background-range-box,

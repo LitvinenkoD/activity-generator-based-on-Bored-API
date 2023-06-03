@@ -472,8 +472,6 @@ input[type="range"]{
 input[type="range"]::-moz-range-thumb{
   -moz-appearance: none;
   border: none;
-
-  // background-color: #F0F0F0;
   cursor: pointer;
 
 
@@ -504,7 +502,6 @@ input[type="range"]::-moz-range-thumb{
     rgba(white, 0) calc($apparent-width / 2)
   );
 
-  box-shadow: none;
 
   
 
@@ -520,10 +517,7 @@ input[type="range"]::-webkit-slider-thumb{
   pointer-events: auto;
   cursor: pointer;
 
-  // background-color: #F0F0F0;
-  box-shadow: none;
   border-radius: 50%;
-
 
   /* The real width of the tip is 3.5 em,
   but the apperent width is only 1.2em. This
@@ -544,11 +538,14 @@ input[type="range"]::-webkit-slider-thumb{
       )
       50%,
     #f0f0f0 calc($apparent-width / 2),
-    rgba(white, 0) calc($apparent-width / 2)
+    transparent calc($apparent-width / 2)
   );
 
-  // background-clip: content-box;
+  // background-color: white;
 
+  // background-clip: content-box;
+  border: 1px solid transparent;
+  box-shadow: 0px;
 }
 
 
