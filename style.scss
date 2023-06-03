@@ -486,7 +486,7 @@ input[type="range"]::-moz-range-thumb{
   is kept larger for better UX */
   
   $functional-width: 3.5em;
-  $apparent-width: 1.2em;
+  $apparent-width: 1.4em;
 
   width: $functional-width;
   height: $functional-width;
@@ -501,10 +501,6 @@ input[type="range"]::-moz-range-thumb{
     #f0f0f0 calc($apparent-width / 2),
     rgba(white, 0) calc($apparent-width / 2)
   );
-
-
-  
-
 }
 
 
@@ -525,7 +521,7 @@ input[type="range"]::-webkit-slider-thumb{
   is kept larger for better UX */
 
   $functional-width: 3.5em;
-  $apparent-width: 1.2em;
+  $apparent-width: 1.4em;
 
   width: $functional-width;
   height: $functional-width;
@@ -541,11 +537,7 @@ input[type="range"]::-webkit-slider-thumb{
     transparent calc($apparent-width / 2)
   );
 
-  // background-color: white;
-
-  // background-clip: content-box;
-  border: 1px solid transparent;
-  box-shadow: 0px;
+  box-shadow: 0px 0px;
 }
 
 
