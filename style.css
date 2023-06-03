@@ -320,7 +320,6 @@ input[type=range]::-moz-range-thumb {
   width: 3.5em;
   height: 3.5em;
   background: radial-gradient(circle at calc((100% - 1.2em) / 9.8 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, transparent 0.6em);
-  background-clip: padding-box;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -339,6 +338,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 3.5em;
   height: 3.5em;
   background: radial-gradient(circle at calc((100% - 1.2em) / 10 * var(--this-tip-value) + 0.6em) 50%, #f0f0f0 0.6em, transparent 0.6em);
+  background-clip: padding-box;
 }
 
 .slider__background-range-box,

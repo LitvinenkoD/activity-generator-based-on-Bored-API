@@ -504,7 +504,7 @@ input[type="range"]::-moz-range-thumb{
     transparent calc($apparent-width / 2)
   );
 
-  background-clip: padding-box;
+  
 
 }
 
@@ -543,6 +543,8 @@ input[type="range"]::-webkit-slider-thumb{
     #f0f0f0 calc($apparent-width / 2),
     transparent calc($apparent-width / 2)
   );
+
+  background-clip: padding-box;
 
 }
 
