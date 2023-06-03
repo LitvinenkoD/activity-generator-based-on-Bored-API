@@ -544,7 +544,7 @@ input[type="range"]::-webkit-slider-thumb{
     transparent calc($apparent-width / 2)
   );
 
-  background-clip: padding-box;
+  background-clip: content-box;
 
 }
 
