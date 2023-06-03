@@ -107,6 +107,7 @@ body {
   }
   .api-output-section {
     top: 35%;
+    width: 85%;
   }
 }
 @media screen and (max-width: 22em) {
