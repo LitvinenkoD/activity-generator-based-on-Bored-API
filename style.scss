@@ -113,15 +113,25 @@ $api-output-details-text-size--desktop: 1.25rem;
 $api-output-details-text-size--mobile: 1rem;
 
 
-$card-color: hsl(350, 90%, 88%);
+$body-bg-color: hsl(243, 100%, 7%);
+$form-bg-color: white;
+$button-bg-color: hsl(260, 100%, 72%);
+$card-bg-color: hsl(350, 90%, 88%);
+$card-active-bg-color: $form-bg-color;
+$range-selector-bg-color: grey;
 
+$main-text-color: $body-bg-color;
+$button-text-color: white;
+$link-standrad-text-color:#0066CC;
+
+$range-selector-range-visualizer-color: $card-bg-color;
 
 /* General Styling */
 
 body{
-  background: hsl(243, 100%, 7%);
+  background: $body-bg-color;
 
-  color: hsl(243, 100%, 7%);
+  color: $main-text-color;
 
 }
 
@@ -136,7 +146,7 @@ body{
   text-align: center;
 
 
-  background-color: white;
+  background-color: $form-bg-color;
 
   padding-top: calc($margin-unit * 12);
   padding-bottom: calc($margin-unit * 12);
@@ -214,7 +224,7 @@ body{
 }
 
 .form-page__link:visited{
-  color: #0066CC;
+  color: $link-standrad-text-color;
 }
 
 .api-output-message{
@@ -265,7 +275,7 @@ body{
   transform: scale(.25);
 
   border-radius: 100%;
-  background-color: hsl(243, 100%, 7%);
+  background-color: $body-bg-color;
   opacity: .7;
 }
 
@@ -342,8 +352,8 @@ body{
 
   cursor: pointer;
 
-  background-color: hsl(260, 100%, 72%);
-  color: white;
+  background-color: $button-bg-color;
+  color: $button-text-color;
 
   // Disables double tap zoom on ios
   touch-action: manipulation;
@@ -398,7 +408,7 @@ body{
 
 .category-card,
 .people-card{
-  background-color: $card-color;
+  background-color: $card-bg-color;
 
   padding: calc($margin-unit * 4);
 
@@ -415,8 +425,8 @@ body{
 
 .category-card--status-active,
 .people-card--status-active{
-  background-color: white;
-  border: 2px solid pink;
+  background-color: $card-active-bg-color;
+  border: 2px solid $card-bg-color;
   transition: 200ms;
 }
 
@@ -424,8 +434,8 @@ body{
 @media (hover: hover) and (pointer: fine) {
   .category-card:hover,
   .people-card:hover{
-    background-color: white;
-    border: 2px solid pink;
+    background-color: $card-active-bg-color;
+    border: 2px solid $card-bg-color;
     transition: 200ms;
   }
 }
@@ -576,13 +586,13 @@ input[type="range"]::-webkit-slider-thumb{
   width: 100%;
   position: relative;
   transform: translateY(-50%);
-  background-color: grey;
+  background-color: $range-selector-bg-color;
 }
 .slider__range_visualizer{
   position: absolute;
   left: 20%;
   right: 20%;
-  background-color: pink;
+  background-color: $range-selector-range-visualizer-color;
 }
 
 
