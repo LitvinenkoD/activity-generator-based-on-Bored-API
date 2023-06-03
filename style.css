@@ -269,7 +269,7 @@ body {
 .category-card--status-active,
 .people-card--status-active {
   background-color: white;
-  border: 2px solid pink;
+  border: 2px solid hsl(350deg, 90%, 88%);
   transition: 200ms;
 }
 
@@ -277,7 +277,7 @@ body {
   .category-card:hover,
 .people-card:hover {
     background-color: white;
-    border: 2px solid pink;
+    border: 2px solid hsl(350deg, 90%, 88%);
     transition: 200ms;
   }
 }
@@ -373,7 +373,7 @@ input[type=range]::-webkit-slider-thumb {
   position: absolute;
   left: 20%;
   right: 20%;
-  background-color: pink;
+  background-color: hsl(350deg, 90%, 88%);
 }
 
 .range-selector__supporting-text {
