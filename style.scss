@@ -130,7 +130,6 @@ $range-selector-range-visualizer-color: $card-bg-color;
 
 body{
   background: $body-bg-color;
-
   color: $main-text-color;
 
 }
@@ -154,7 +153,6 @@ body{
   border-radius: $standard-border-radius;
 
   margin-top: calc($margin-unit * 6);
-
 
   min-height: 82vh;
 
@@ -392,9 +390,7 @@ body{
   gap: calc($margin-unit * 1);
   max-width: 500px;
 
-
   margin-top: calc($margin-unit * 8);
-
 }
 
 
