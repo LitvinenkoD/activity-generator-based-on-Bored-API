@@ -496,15 +496,13 @@ input[type="range"]::-moz-range-thumb{
   background: radial-gradient(
     circle at
       calc(
-        (100% - $apparent-width) / 10 * var(--this-tip-value) +
+        (100% - $apparent-width) / 9.8 * var(--this-tip-value) +
         $apparent-width / 2
       )
       50%,
     #f0f0f0 calc($apparent-width / 2),
     transparent calc($apparent-width / 2)
   );
-
-  outline: 1px solid black;
 
 }
 
@@ -544,7 +542,6 @@ input[type="range"]::-webkit-slider-thumb{
     transparent calc($apparent-width / 2)
   );
 
-  outline: 1px solid black;
 }
 
 
