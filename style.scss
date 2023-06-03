@@ -473,7 +473,7 @@ input[type="range"]::-moz-range-thumb{
   -moz-appearance: none;
   border: none;
 
-  background-color: #F0F0F0;
+  // background-color: #F0F0F0;
   cursor: pointer;
 
 
@@ -504,6 +504,8 @@ input[type="range"]::-moz-range-thumb{
     rgba(white, 0) calc($apparent-width / 2)
   );
 
+  box-shadow: none;
+
   
 
 }
@@ -518,7 +520,8 @@ input[type="range"]::-webkit-slider-thumb{
   pointer-events: auto;
   cursor: pointer;
 
-  background-color: #F0F0F0;
+  // background-color: #F0F0F0;
+  box-shadow: none;
   border-radius: 50%;
 
 
